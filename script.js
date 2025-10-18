@@ -95,42 +95,7 @@ buttons.forEach(btn => {
     // přidání aktivní třídy pouze aktuálnímu tlačítku
     btn.classList.add('active');
   });
-  //kontakt
-  document.getElementById('contact-form').addEventListener('submit', async function(e) {
-  e.preventDefault();
-
-  // Validace checkboxu
-  if (!document.getElementById('consent').checked) {
-    alert('Musíte souhlasit se zpracováním údajů.');
-    return;
-  }
-
-  const data = {
-    name: document.getElementById('name').value,
-    email: document.getElementById('email').value,
-    tel: document.getElementById('tel').value,
-    message: document.getElementById('message').value
-  };
-
-  try {
-    const res = await fetch('/api/contact', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(data)
-    });
-
-    if (res.ok) {
-      alert('Zpráva odeslána!'); // nebo přesměruj: window.location = '/dekujeme.html'
-      this.reset();
-    } else {
-      alert('Chyba při odesílání. Zkuste to prosím znovu.');
-    }
-  } catch (err) {
-    alert('Chyba sítě. Zkuste to prosím později.');
-    console.error(err);
-  }
-});
-});
+  });
 //kontakt
 document.addEventListener('DOMContentLoaded', function() {
   const form = document.getElementById('contact-form');
@@ -151,7 +116,7 @@ document.addEventListener('DOMContentLoaded', function() {
     };
 
     try {
-      const res = await fetch('/api/contact', {
+      const res = await fetch('/api/sendEmails', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data)
@@ -171,4 +136,5 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 })();
+
 
