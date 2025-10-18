@@ -6,6 +6,7 @@ export const config = {
 };
 
 export default async function handler(req, res) {
+    console.log("Handler volán");  // Tohle se musí objevit v logu!
   if (req.method !== 'POST') return res.status(405).send('Method not allowed');
 
   let body = '';
@@ -42,3 +43,4 @@ export default async function handler(req, res) {
     }
   });
 }
+
