@@ -126,7 +126,7 @@ document.addEventListener('DOMContentLoaded', function() {
         alert('Zpráva odeslána!');
         form.reset();
       } else {
-        alert('Chyba při odesílání.');
+        alert('Chyba při odesílání. nova');
       }
     } catch (err) {
       alert('Chyba sítě.');
@@ -136,5 +136,6 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 })();
+
 
 
