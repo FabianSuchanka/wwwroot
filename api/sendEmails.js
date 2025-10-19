@@ -13,9 +13,9 @@ export default async function handler(req, res) {
   req.on('data', chunk => body += chunk.toString());
   req.on('end', async () => {
     const parsedBody = parse(body);
-    const { name, email, message } = parsedBody;
+    const { jmeno, mail, message } = parsedBody;
 
-    if (!name || !email || !message) {
+    if (!jmeno || !mail || !message) {
       return res.status(400).json({ success: false, error: 'Všechna pole jsou povinná' });
     }
 
@@ -30,17 +30,18 @@ export default async function handler(req, res) {
         },
       });
 
-      await transporter.sendMail({
+      await transporter.sendMails({
         from: process.env.SMTP_USER,
         to: process.env.TO_EMAIL,
-        subject: `Zpráva z kontaktního formuláře od ${name}`,
-        text: `Email: ${email}\n\nZpráva:\n${message}`,
+        subject: `Zpráva z kontaktního formuláře od ${jmeno}`,
+        text: `Email: ${mail}\n\nZpráva:\n${zprava}`,
       });
 
       res.status(200).json({ success: true });
     } catch (err) {
-      res.status(500).json({ success: false, error: err.message });
+      res.status(500).json({ success: false, error: err.zprava });
     }
   });
 }
+
 
