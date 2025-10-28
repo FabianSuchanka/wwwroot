@@ -670,3 +670,22 @@ footer{text-align:center;padding:28px 24px;color:#2F855A;border-top:1px solid #C
   .hero-content h1{font-size:1.4rem}
   .section-title{font-size:1.4rem}
 }
+/* Přidat na konec style.css */
+
+.btn-link {
+  background: none;
+  border: none;
+  color: #2C5F2D; /* Ladí k vašemu zelenému designu */
+  text-decoration: underline;
+  font-weight: 600;
+  padding: 8px 14px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-family: 'Inter', sans-serif;
+  transition: color 0.2s;
+}
+
+.btn-link:hover {
+  color: #1A431F;
+  text-decoration: none;
+}
