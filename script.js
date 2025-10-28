@@ -141,19 +141,6 @@
       requestAnimationFrame(animate);
     }
   }
-// filtr + aktivní stav
-const buttons = document.querySelectorAll('.btn, .filter-btn');
-
-// přidání click listeneru pro všechna tlačítka
-buttons.forEach(btn => {
-  btn.addEventListener('click', () => {
-    // odebrání aktivní třídy ze všech tlačítek
-    buttons.forEach(b => b.classList.remove('active'));
-
-    // přidání aktivní třídy pouze aktuálnímu tlačítku
-    btn.classList.add('active');
-  });
-});
 document.addEventListener("DOMContentLoaded", () => {
   const langBtn = document.getElementById("lang-btn");
   let currentLang = "cs";
@@ -425,4 +412,5 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 })();
+
 
